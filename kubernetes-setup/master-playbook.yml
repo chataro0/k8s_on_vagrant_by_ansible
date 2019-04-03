@@ -77,6 +77,17 @@
         - kubeadm 
         - kubectl
 
+  - name: modify kubelet internal-ip to bind eth1
+    template:
+      src: kubelet.j2
+      dest: /etc/default/kubelet
+
+  - name: daemon reload
+    command: "{{ item }}"
+    loop:
+      - systemctl daemon-reload
+      - systemctl restart kubelet
+  
   - name: Initialize the Kubernetes cluster using kubeadm
     command: kubeadm init --apiserver-advertise-address="192.168.50.10" --apiserver-cert-extra-sans="192.168.50.10"  --node-name k8s-master --pod-network-cidr=192.168.0.0/16
 
