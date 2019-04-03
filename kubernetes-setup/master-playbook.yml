@@ -3,8 +3,8 @@
   become: true
   roles:
   - 1_install_docker_and_components
-  - 2_swao_off
-  - 3_nstall_kubelet_kubeadm_kubectl
+  - 2_swap_off
+  - 3_install_kubelet_kubeadm_kubectl
   - 4_initialize_kubeadm
   - 5_setup_kubeconfig
   - 6_install_calico
