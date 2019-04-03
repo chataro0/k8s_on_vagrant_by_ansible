@@ -2,10 +2,10 @@
 - hosts: all
   become: true
   roles:
-  - 1_install_docker_and_components
-  - 2_swap_off
-  - 3_install_kubelet_kubeadm_kubectl
-  - 4_initialize_kubeadm
-  - 5_setup_kubeconfig
-  - 6_install_calico
-  - 7_generate_join-command
+  - install_docker_and_components
+  - swap_off
+  - install_kubelet_kubeadm_kubectl
+  - initialize_kubeadm
+  - setup_kubeconfig
+  - install_calico
+  - generate_join-command

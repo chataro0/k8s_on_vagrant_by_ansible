@@ -2,7 +2,7 @@
 - hosts: all
   become: true
   roles:
-  - 1_install_docker_and_components
-  - 2_swap_off
-  - 3_install_kubelet_kubeadm_kubectl
-  - 8_join_kubeadm
+  - install_docker_and_components
+  - swap_off
+  - install_kubelet_kubeadm_kubectl
+  - join_kubeadm
